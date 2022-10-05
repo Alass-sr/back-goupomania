@@ -9,7 +9,9 @@ const userController = require('../controllers/user.controller')
 
 
 // route auth
-router.post("/register", authController.signUp);
+router.post('/register', authController.signUp);
+router.post('/login', authController.signIn);
+router.get('/logout', authController.logout);
 
 // route getAllUsers
 router.get('/', userController.getAllUsers);
@@ -27,7 +29,7 @@ router.delete('/:id', userController.deleteUser);
 router.patch('/follow/:id', userController.follow);   // fonction pour mettre le tableau utilisateur a jour
 
 // route unfollower
-router.patch('/unfollow/:id', userController.follow);   // fonction pour mettre le tableau utilisateur a jour
+router.patch('/unfollow/:id', userController.unfollow);   // fonction pour mettre le tableau utilisateur a jour
 
 // Exportation de router
 module.exports = router;
